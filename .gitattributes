@@ -1,3 +1,4 @@
 build/* linguist-vendored
 ios/* linguist-vendored
 *.h linguist-vendored
+*.d linguist-vendored
