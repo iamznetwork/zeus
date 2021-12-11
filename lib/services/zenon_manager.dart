@@ -12,12 +12,8 @@ class ZenonManager {
   static KeyPair? get keyPair => keyStore?.getKeyPair(0);
   static Future<Address?> get address async => await keyPair?.address;
 
-  final mnemonic =
+  static const mnemonic =
       'route become dream access impulse price inform obtain engage ski believe awful absent pig thing vibrant possible exotic flee pepper marble rural fire fancy';
-
-  setKeyStore(KeyStore) {
-    // what it should look like:
-  }
 
   static Future<Map<String, dynamic>?> getAccountInfoByAddress(
       String address) async {
@@ -139,5 +135,20 @@ class ZenonManager {
       wallet: Directory(path.join(main.path, 'wallet'))..createSync(),
       cache: Directory(path.join(main.path, 'cache'))..createSync(),
     );
+  }
+
+  // TODO
+  static void setKeyStore(KeyStore) async {
+    // what it should look like:
+    final keyStore = KeyStore.fromMnemonic(ZenonManager.mnemonic);
+
+    // set as default KeyStore
+    Zenon().keyStoreManager.setKeyStore(keyStore);
+  }
+
+  // TODO
+  static void saveKeyStoreManager() async {
+    // this throws an error:
+    // await Zenon().keyStoreManager.saveKeyStore(keyStore, "this is a password!");
   }
 }

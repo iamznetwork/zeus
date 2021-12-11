@@ -18,22 +18,8 @@ void main() async {
   // do we have a userpassword?
   bool newUser = await SecureDataStoreService.containsUserPassword();
 
-  // set the user password
-  SecureDataStoreService.storeUserPassword("123");
-
-  final mnemonic =
-      'route become dream access impulse price inform obtain engage ski believe awful absent pig thing vibrant possible exotic flee pepper marble rural fire fancy';
-
-  final keyStore = KeyStore.fromMnemonic(mnemonic);
-  print(keyStore.mnemonic);
-  // save keystore
-
-  // set as default KeyStore
-  Zenon().keyStoreManager.setKeyStore(keyStore);
-
-  // this throws an error:
-  // await Zenon().keyStoreManager.saveKeyStore(keyStore, "this is a password!");
-  runApp(Zeus());
+  // TODO: if new user, route to "new password"
+  runApp(const Zeus());
 }
 
 class Zeus extends StatelessWidget {
@@ -43,7 +29,7 @@ class Zeus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'IAMZ',
+      title: AppConstants.appName,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Colors.black,
           primaryColor: Colors.black,
