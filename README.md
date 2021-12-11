@@ -1,10 +1,10 @@
-# WarpDrive submission for IAM-Z
+# WarpDrive submission for IAM-Z and Zeus
 
 Peace of mind in the age of web 3.0
 
 - https://twitter.com/2bonahill
 - iamz.network (main website - under construction)
-- iamzeus.io (for the password and identity manager - under construction)
+- iamzeus.io (for the password and identity manager Zeus - under construction)
 
 ### Status, description and current progress
 
@@ -20,7 +20,7 @@ Please refer to [this medium article](https://medium.com/@2bonahill/iam-z-a0a925
 
  - First prototype of Zeus currently under development (fka. zPass). See screenshots [here](https://twitter.com/2bonahill/status/1460197832103809024) and [here](https://twitter.com/2bonahill/status/1468229505730945036).
  - Zeus is the password manager built for iOS and Android, using state of the art encryption (leveraging the zenon dart sdk wallet) and the Network of Momentum to store and protect the user's secrets
- - Code repository to Zeus: [IAM-Z Code Repository](https://github.com/iamznetwork/zeus). Note: Repository is still private but will be made public very soon before eoy with version 0.1
+ - Code repository to Zeus: [IAM-Z Code Repository](https://github.com/iamznetwork/zeus). Note: This is work in progress.
  - Website: iamzeus.io (website under construction).
  
 #### Impact
