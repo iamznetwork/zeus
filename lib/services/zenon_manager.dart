@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path/path.dart' as path;
@@ -9,8 +8,16 @@ import 'package:hex/hex.dart';
 
 class ZenonManager {
   static final zenon = Zenon();
+  static KeyStore? keyStore;
+  static KeyPair? get keyPair => keyStore?.getKeyPair(0);
+  static Future<Address?> get address async => await keyPair?.address;
+
   final mnemonic =
       'route become dream access impulse price inform obtain engage ski believe awful absent pig thing vibrant possible exotic flee pepper marble rural fire fancy';
+
+  setKeyStore(KeyStore) {
+    // what it should look like:
+  }
 
   static Future<Map<String, dynamic>?> getAccountInfoByAddress(
       String address) async {
@@ -76,9 +83,14 @@ class ZenonManager {
     // init the paths first (fix for iOS)
     znnDefaultPaths = await initDefaultPaths();
 
-    debugPrint('main: ${znnDefaultPaths.main.path}');
-    debugPrint('cache: ${znnDefaultPaths.cache.path}');
-    debugPrint('wallet: ${znnDefaultPaths.wallet.path}');
+    // print("from initZenon --------");
+    // print(znnDefaultPaths.main.path);
+    // print(znnDefaultPaths.cache.path);
+    // print(znnDefaultPaths.wallet.path);
+
+    // debugPrint('main: ${znnDefaultPaths.main.path}');
+    // debugPrint('cache: ${znnDefaultPaths.cache.path}');
+    // debugPrint('wallet: ${znnDefaultPaths.wallet.path}');
 
     // init zenon Client
     const String georgesPillar = 'wss://node1.zenon.wiki:443';

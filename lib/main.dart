@@ -3,9 +3,14 @@ import 'package:zeus/assets/constants.dart';
 import 'package:get/get.dart';
 import 'package:zeus/screens/login/view/login_screen.dart';
 import 'package:zeus/services/secure_data_store_service.dart';
+import 'package:zeus/services/zenon_manager.dart';
+import 'package:znn_sdk_dart/znn_sdk_dart.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // initialize zenon
+  await ZenonManager.initZenon();
 
   // init the database
   await SecureDataStoreService.initDataStore();
@@ -16,6 +21,18 @@ void main() async {
   // set the user password
   SecureDataStoreService.storeUserPassword("123");
 
+  final mnemonic =
+      'route become dream access impulse price inform obtain engage ski believe awful absent pig thing vibrant possible exotic flee pepper marble rural fire fancy';
+
+  final keyStore = KeyStore.fromMnemonic(mnemonic);
+  print(keyStore.mnemonic);
+  // save keystore
+
+  // set as default KeyStore
+  Zenon().keyStoreManager.setKeyStore(keyStore);
+
+  // this throws an error:
+  // await Zenon().keyStoreManager.saveKeyStore(keyStore, "this is a password!");
   runApp(Zeus());
 }
 
