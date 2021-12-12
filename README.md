@@ -62,6 +62,7 @@ There will be smaller expenses in the context of domain acquisition and website 
 
 The next 6 months will be heavily focused on the Zeus app:
 - Complete Zeus core functionality: Storing different kind of secrets and using state of the art encryption to fully secure the data.
+- Implementation if advanced Zeus capabilities (e.g. auto-fill for iOS and Android, Secret sharing, recovery and inheritanZe features).
 - Putting the encrypted secrets on to the Network of Momentum (secure backup on the blockchain)
 - Drafting a more detailed solution architecture blueprint for setting up the decentralized identity ecosystem (zID) within the Zenon network. 
 
