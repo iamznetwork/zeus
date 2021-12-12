@@ -66,6 +66,8 @@ The next 6 months will be heavily focused on the Zeus app:
 - Putting the encrypted secrets on to the Network of Momentum (secure backup on the blockchain)
 - Drafting a more detailed solution architecture blueprint for setting up the decentralized identity ecosystem (zID) within the Zenon network. 
 
+Please note: In order to enter phase 2 (the DID implementation), smart contract functionality will be required on the Zenon network. 
+
 #### Accelerator-Z 
 
 *Do you currently think that you’ll likely want to apply to Accelerator-Z, provided received funding helps you achieve near-term goals?*
