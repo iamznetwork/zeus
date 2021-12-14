@@ -71,11 +71,11 @@ class SecureDataStoreService {
     });
   }
 
-  static void storeUserPassword(String password) async {
+  static Future<void> storeHashedUserPassword(String password) async {
     try {
       String passwordHash = CryptoService.hashPassword(password).toString();
 
-      secureStorage.write(key: userPasswordKey, value: passwordHash);
+      await secureStorage.write(key: userPasswordKey, value: passwordHash);
     } catch (e) {
       print("Error setting password: ");
       print(e);
@@ -90,8 +90,12 @@ class SecureDataStoreService {
         await secureStorage.read(key: userPasswordKey) != null;
   }
 
-  static Future<String?> fetchHashedPassword() async {
-    return await secureStorage.read(key: uid);
+  static Future<String?> fetchHashedUserPassword() async {
+    return await secureStorage.read(key: userPasswordKey);
+  }
+
+  static Future<void> deleteHashedUserPassword() async {
+    await secureStorage.delete(key: userPasswordKey);
   }
 
   static Future<bool> containsHiveEncryptionKey() async {

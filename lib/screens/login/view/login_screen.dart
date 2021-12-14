@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zeus/screens/home/view/home_screen.dart';
+import 'package:zeus/screens/newUserPassword/screen/new_user_password_screen.dart';
 // import 'package:zeus/services/crypto_service.dart';
 // import 'package:zeus/services/crypto_services.dart';
 import 'package:zeus/services/login_service.dart';
@@ -16,14 +17,36 @@ class _LoginScreenState extends State<LoginScreen> {
   // final _formKey = GlobalKey<FormState>();
   final passwordFieldController = TextEditingController();
   bool obscured = true;
+  int remainingLoginAttempts = 3;
 
   onSubmit(String password) async {
+    if (remainingLoginAttempts <= 1) {
+      // reset password and go to home screen
+      Get.snackbar("Login failed",
+          "Incorrect pasword was entered 3 times. Going to reset Zeus.",
+          icon: const Icon(Icons.error),
+          backgroundColor: Colors.red,
+          snackPosition: SnackPosition.BOTTOM,
+          duration: const Duration(seconds: 5));
+      await LoginService.resetUserLogin();
+      await Future.delayed(const Duration(seconds: 3));
+      // TODO: also delete Hive DB!!!
+      Get.off(() => const NewUserPasswordScreen());
+      return;
+    }
+
     if (await LoginService.loginUser(password)) {
       Get.off(() => const Home(title: "Welcome Zeus"));
     } else {
-      print("login failed");
+      remainingLoginAttempts--;
+      Get.snackbar(
+        "Login failed",
+        "Incorrect pasword. $remainingLoginAttempts attempts left until Zeus will be reset.",
+        icon: const Icon(Icons.error),
+        backgroundColor: Colors.red,
+        snackPosition: SnackPosition.BOTTOM,
+      );
     }
-    //
   }
 
   @override

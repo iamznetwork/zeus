@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:zeus/assets/constants.dart';
 import 'package:get/get.dart';
 import 'package:zeus/screens/login/view/login_screen.dart';
+import 'package:zeus/screens/newUserPassword/screen/new_user_password_screen.dart';
+import 'package:zeus/services/login_service.dart';
 import 'package:zeus/services/secure_data_store_service.dart';
 import 'package:zeus/services/zenon_manager.dart';
-import 'package:znn_sdk_dart/znn_sdk_dart.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,14 +17,16 @@ void main() async {
   await SecureDataStoreService.initDataStore();
 
   // do we have a userpassword?
-  bool newUser = await SecureDataStoreService.containsUserPassword();
+  bool existingUser = await LoginService.userAccountExists();
 
-  // TODO: if new user, route to "new password"
-  runApp(const Zeus());
+  runApp(Zeus(existingUser: existingUser //newUser,
+      ));
 }
 
 class Zeus extends StatelessWidget {
-  const Zeus({Key? key}) : super(key: key);
+  const Zeus({Key? key, required this.existingUser}) : super(key: key);
+
+  final bool existingUser;
 
   // This is the rood widget of the zeus application.
   @override
@@ -45,7 +48,7 @@ class Zeus extends StatelessWidget {
       // TODO: make named routes
       // TODO: introduce login screen
       // home: const Home(title: 'Welcome to zPass'),
-      home: const LoginScreen(),
+      home: existingUser ? const LoginScreen() : const NewUserPasswordScreen(),
     );
   }
 }

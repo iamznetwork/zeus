@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		wyA/9Xo6j6RY5kq7dp9UzWLbx2c=
+		shFWhA0zq7gjoQHEHayOnd/GlLs=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		M3lvWi2I+UgjaQAY39yjUc/CWv0=
+		z04vnJ87FGpeBNMfev7ZcLCFJRQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		FUWSo3e/5pEUcsx+3/Sg8yJb5p8=
+		ZomaZJS8IypCP67HwsAHwzyLRxA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/crypto_font_icons/font/cryptofont-webfont.ttf</key>
 		<data>
@@ -577,11 +577,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wyA/9Xo6j6RY5kq7dp9UzWLbx2c=
+			shFWhA0zq7gjoQHEHayOnd/GlLs=
 			</data>
 			<key>hash2</key>
 			<data>
-			GM7YBb7jDwCvOPeyLF5QLCVeQbn/eO5coWVDqKIf14o=
+			5aumu14ZRE5YSO6ieetFtiTd+AaIRuGvNdS5cY6iGD8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -599,11 +599,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			M3lvWi2I+UgjaQAY39yjUc/CWv0=
+			z04vnJ87FGpeBNMfev7ZcLCFJRQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			ccn9IRIPYOscM/Yoh7wdtYbhrrbCvaWAwst1sAvTGac=
+			05omCjCOHHfKOGyLwhtc6wQHkgEijaokZjLc99zc0Sc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -665,11 +665,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FUWSo3e/5pEUcsx+3/Sg8yJb5p8=
+			ZomaZJS8IypCP67HwsAHwzyLRxA=
 			</data>
 			<key>hash2</key>
 			<data>
-			uzQI7oSdzrjO+uZtCEy9yioCdkkdpJFB3f0Om9ldKoE=
+			x6UuukA1IXTQM1fU7+bBfc+HnIUQ9pAjgr/NOw2+ZwU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/crypto_font_icons/font/cryptofont-webfont.ttf</key>

@@ -107,7 +107,7 @@ packages:
     source: hosted
     version: "1.0.1"
   cryptography:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: cryptography
       url: "https://pub.dartlang.org"
