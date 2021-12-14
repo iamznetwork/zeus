@@ -8,12 +8,4 @@ class CryptoService {
 
     return sha256.convert(encodedPassword);
   }
-
-  static void createHiveEncryptionKeyFromPassword() async {
-    // 32 bytes are asked
-    final algorithm = AesGcm.with256bits();
-
-    // Generate a random 256-bit secret key
-    final secretKey = await algorithm.newSecretKeyFromBytes([1, 2, 3]);
-  }
 }

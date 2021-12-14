@@ -13,9 +13,13 @@ class SecureDataStoreService {
   static const String uid = "Zeus";
 
   // init the secure data store
-  static initDataStore() async {
+  static Future<void> initDataStore() async {
     await Hive.initFlutter();
-    Hive.registerAdapter(SecretAdapter());
+
+    // check if adapter is already registered
+    if (!Hive.isAdapterRegistered(SecretAdapter().typeId)) {
+      Hive.registerAdapter(SecretAdapter());
+    }
 
     bool containsEncryptionKey = await containsHiveEncryptionKey();
 

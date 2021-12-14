@@ -4,23 +4,14 @@ import 'package:get/get.dart';
 import 'package:zeus/screens/login/view/login_screen.dart';
 import 'package:zeus/screens/newUserPassword/screen/new_user_password_screen.dart';
 import 'package:zeus/services/login_service.dart';
-import 'package:zeus/services/secure_data_store_service.dart';
-import 'package:zeus/services/zenon_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // initialize zenon
-  await ZenonManager.initZenon();
-
-  // init the database
-  await SecureDataStoreService.initDataStore();
-
   // do we have a userpassword?
   bool existingUser = await LoginService.userAccountExists();
 
-  runApp(Zeus(existingUser: existingUser //newUser,
-      ));
+  runApp(Zeus(existingUser: existingUser));
 }
 
 class Zeus extends StatelessWidget {

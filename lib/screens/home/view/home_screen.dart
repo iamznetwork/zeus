@@ -6,6 +6,8 @@ import 'package:zeus/screens/wallet/wallet_home_screen.dart';
 import 'package:zeus/screens/iamz/view/iamz_home_screen.dart';
 import 'package:zeus/assets/constants.dart';
 import 'package:get/get.dart';
+import 'package:zeus/services/secure_data_store_service.dart';
+import 'package:zeus/services/zenon_manager.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key, required this.title}) : super(key: key);
@@ -23,6 +25,11 @@ class _HomeState extends State<Home> {
     const DidHomeScreen(),
     const IamzHomeScreen()
   ];
+
+  @override
+  void initState() {
+    print("init home");
+  }
 
   @override
   Widget build(BuildContext context) {
