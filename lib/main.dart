@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zeus/assets/constants.dart';
 import 'package:get/get.dart';
 import 'package:zeus/screens/login/view/login_screen.dart';
-import 'package:zeus/screens/newUserPassword/screen/new_user_password_screen.dart';
+import 'package:zeus/screens/newUserPassword/view/new_user_password_screen.dart';
 import 'package:zeus/services/login_service.dart';
 
 void main() async {
