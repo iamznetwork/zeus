@@ -13,7 +13,7 @@ class SecureDataStoreService {
   static const String uid = "Zeus";
 
   // init the secure data store
-  static Future<void> initDataStore() async {
+  static Future<void> initDataStore(String userPassword) async {
     await Hive.initFlutter();
 
     // check if adapter is already registered
@@ -24,7 +24,8 @@ class SecureDataStoreService {
     bool containsEncryptionKey = await containsHiveEncryptionKey();
 
     if (!containsEncryptionKey) {
-      var newKey = Hive.generateSecureKey();
+      // var newKey = Hive.generateSecureKey();
+      var newKey = await CryptoService.createKeyFromPassword(userPassword);
       await secureStorage.write(
           key: hiveEncryptionKeyKey, value: base64UrlEncode(newKey));
     }
@@ -77,7 +78,7 @@ class SecureDataStoreService {
 
   static Future<void> storeHashedUserPassword(String password) async {
     try {
-      String passwordHash = CryptoService.hashPassword(password).toString();
+      String passwordHash = await CryptoService.hashPassword(password);
 
       await secureStorage.write(key: userPasswordKey, value: passwordHash);
     } catch (e) {

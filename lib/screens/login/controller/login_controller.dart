@@ -48,7 +48,7 @@ class LoginController extends GetxController {
       // init zenon and db
       Future.wait([
         ZenonManager.initZenon(),
-        SecureDataStoreService.initDataStore()
+        SecureDataStoreService.initDataStore(password)
       ]).then((value) {
         // both are done. time to bring the user to the app
         Get.closeAllSnackbars();

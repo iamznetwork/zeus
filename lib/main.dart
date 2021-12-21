@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zeus/assets/constants.dart';
+import 'package:zeus/assets/constants.dart' as constants;
 import 'package:get/get.dart';
 import 'package:zeus/screens/login/view/login_screen.dart';
 import 'package:zeus/screens/newUserPassword/view/new_user_password_screen.dart';
@@ -23,17 +23,17 @@ class Zeus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: AppConstants.appName,
+      title: constants.appName,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Colors.black,
           primaryColor: Colors.black,
           appBarTheme:
-              const AppBarTheme(backgroundColor: MyThemeColors.darkGrey),
-          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-            backgroundColor: MyThemeColors.darkGrey,
+              AppBarTheme(backgroundColor: constants.colors['darkGrey']),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: constants.colors['darkGrey'],
           ),
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: MyThemeColors.zenonGreen,
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: constants.colors['zenonGreen'],
           )),
       debugShowCheckedModeBanner: false,
       // TODO: make named routes

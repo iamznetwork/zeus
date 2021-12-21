@@ -4,10 +4,8 @@ import 'package:zeus/screens/home/controller/home_controller.dart';
 import 'package:zeus/screens/secret/view/secret_home_screen.dart';
 import 'package:zeus/screens/wallet/wallet_home_screen.dart';
 import 'package:zeus/screens/iamz/view/iamz_home_screen.dart';
-import 'package:zeus/assets/constants.dart';
+import 'package:zeus/assets/constants.dart' as constants;
 import 'package:get/get.dart';
-import 'package:zeus/services/secure_data_store_service.dart';
-import 'package:zeus/services/zenon_manager.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key, required this.title}) : super(key: key);
@@ -38,7 +36,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         // backgroundColor: Colors.grey[850],
-        selectedItemColor: MyThemeColors.zenonGreen,
+        selectedItemColor: constants.colors['zenonGreen'],
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

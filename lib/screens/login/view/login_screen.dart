@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:zeus/assets/constants.dart';
+import 'package:zeus/assets/constants.dart' as constants;
 import 'package:zeus/screens/login/controller/login_controller.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             icon: Icon(controller.pwdIsObscured.value
                                 ? Icons.visibility
                                 : Icons.visibility_off),
-                            color: MyThemeColors.zenonGreen,
+                            color: constants.colors['zenonGreen'],
                             onPressed: controller.onTogglePwdObscurity,
                           ),
                           border: OutlineInputBorder(
@@ -72,8 +72,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: MyThemeColors.zenonGreen,
+                            borderSide: BorderSide(
+                              color: constants.colors['zenonGreen']!,
                               width: 2,
                             ),
                             borderRadius: BorderRadius.circular(8),

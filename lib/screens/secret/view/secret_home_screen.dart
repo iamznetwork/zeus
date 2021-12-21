@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zeus/models/secret.dart';
 import 'package:zeus/screens/secret/controller/secret_home_controller.dart';
-import 'package:zeus/screens/secret/secret_edit_screen.dart';
 import 'package:zeus/screens/secret/view/secret_item_screen.dart';
-import 'package:zeus/assets/constants.dart';
+import 'package:zeus/assets/constants.dart' as constants;
 import 'package:zeus/services/secure_data_store_service.dart';
 
 class SecretHomeScreen extends StatefulWidget {
@@ -149,7 +148,7 @@ class SecretCardWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: const Color(0xff161616),
           border: Border.all(
-            color: MyThemeColors.zenonGreen,
+            color: constants.colors['zenonGreen']!,
             width: 0.5,
           ),
           borderRadius: const BorderRadius.all(Radius.circular(5))),

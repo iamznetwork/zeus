@@ -14,8 +14,7 @@ class LoginService {
         await SecureDataStoreService.fetchHashedUserPassword();
 
     // hash the password provided by the user
-    String? providedPasswordHash =
-        CryptoService.hashPassword(password).toString();
+    String? providedPasswordHash = await CryptoService.hashPassword(password);
 
     if (storedPasswordHash == providedPasswordHash) {
       return true;

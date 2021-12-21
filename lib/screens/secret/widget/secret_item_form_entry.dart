@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zeus/assets/constants.dart';
+import 'package:zeus/assets/constants.dart' as constants;
 import 'package:zeus/models/secret.dart';
 
 class SecretItemFormEntry extends StatefulWidget {
@@ -80,8 +80,8 @@ class _SecretItemFormEntryState extends State<SecretItemFormEntry> {
                   borderRadius: BorderRadius.circular(8),
                 )
               : OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: MyThemeColors.zenonGreen,
+                  borderSide: BorderSide(
+                    color: constants.colors['zenonGreen']!,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.circular(8),
