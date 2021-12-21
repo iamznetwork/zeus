@@ -26,6 +26,7 @@ class SecureDataStoreService {
     if (!containsEncryptionKey) {
       // var newKey = Hive.generateSecureKey();
       var newKey = await CryptoService.createKeyFromPassword(userPassword);
+
       await secureStorage.write(
           key: hiveEncryptionKeyKey, value: base64UrlEncode(newKey));
     }

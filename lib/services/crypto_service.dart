@@ -17,7 +17,7 @@ class CryptoService {
     final utf8password = utf8.encode(password);
     final algorithm = Sha256();
     final hash = await algorithm.hash(utf8password);
-    print('Hash: ${hash.bytes}');
+    // print('Hash: ${hash.bytes}');
     return hex.encode(hash.bytes);
   }
 
@@ -31,8 +31,6 @@ class CryptoService {
     // Password we want to hash
     // final secretKey = SecretKey([1, 2, 3]);
     final secretKey = SecretKey(utf8.encode(password));
-    print("SecretKey:");
-    print(await secretKey.extractBytes());
 
     // Some salt
     final List<int> nonce = utf8.encode(constants.appName);
@@ -43,7 +41,7 @@ class CryptoService {
       nonce: nonce,
     );
     final newSecretKeyBytes = await newSecretKey.extractBytes();
-    print('Result: $newSecretKeyBytes');
+    // print('Result: $newSecretKeyBytes');
     return newSecretKeyBytes;
   }
 }
