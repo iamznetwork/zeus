@@ -8,7 +8,7 @@ class CryptoService {
     final utf8password = utf8.encode(password);
     final algorithm = Sha256();
     final hash = await algorithm.hash(utf8password);
-    print('Hash: ${hash.bytes}');
+    // print('Hash: ${hash.bytes}');
 
     return utf8.decode(hash.bytes);
   }

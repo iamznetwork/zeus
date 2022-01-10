@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             icon: Icon(controller.pwdIsObscured.value
                                 ? Icons.visibility
                                 : Icons.visibility_off),
-                            color: constants.colors['zenonGreen'],
+                            // color: constants.colors['zenonGreen'],
                             onPressed: controller.onTogglePwdObscurity,
                           ),
                           border: OutlineInputBorder(

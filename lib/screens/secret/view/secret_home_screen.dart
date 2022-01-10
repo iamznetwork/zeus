@@ -4,6 +4,7 @@ import 'package:zeus/models/secret.dart';
 import 'package:zeus/screens/secret/controller/secret_home_controller.dart';
 import 'package:zeus/screens/secret/view/secret_item_screen.dart';
 import 'package:zeus/assets/constants.dart' as constants;
+import 'package:zeus/screens/secret/widget/expandable_fab.dart';
 import 'package:zeus/services/secure_data_store_service.dart';
 
 class SecretHomeScreen extends StatefulWidget {
@@ -51,20 +52,24 @@ class _SecretHomeScreenState extends State<SecretHomeScreen> {
         title: const Text("Passwords"),
         centerTitle: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        heroTag: "Add new Secret",
-        onPressed: () {
-          Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => SecretItemScreen(secret: Secret())))
-              .then((value) {
-            SecureDataStoreService.dumpSecretBox();
-            setState(() {});
-          });
-        },
-        child: const Icon(Icons.add),
+      floatingActionButton: ExpandableFab(
+        distance: 1,
+        children: [Text("data")],
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   heroTag: "Add new Secret",
+      //   onPressed: () {
+      //     Navigator.push(
+      //             context,
+      //             MaterialPageRoute(
+      //                 builder: (context) => SecretItemScreen(secret: Secret())))
+      //         .then((value) {
+      //       SecureDataStoreService.dumpSecretBox();
+      //       setState(() {});
+      //     });
+      //   },
+      //   child: const Icon(Icons.add),
+      // ),
       body: Column(
         children: [
           Row(

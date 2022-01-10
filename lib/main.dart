@@ -24,17 +24,7 @@ class Zeus extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: constants.appName,
-      theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: Colors.black,
-          primaryColor: Colors.black,
-          appBarTheme:
-              AppBarTheme(backgroundColor: constants.colors['darkGrey']),
-          bottomNavigationBarTheme: BottomNavigationBarThemeData(
-            backgroundColor: constants.colors['darkGrey'],
-          ),
-          floatingActionButtonTheme: FloatingActionButtonThemeData(
-            backgroundColor: constants.colors['zenonGreen'],
-          )),
+      theme: constants.themeData,
       debugShowCheckedModeBanner: false,
       // TODO: make named routes
       // TODO: introduce login screen
